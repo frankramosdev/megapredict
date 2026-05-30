@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #0a0b0f;
+  --color-surface: #12141c;
+  --color-surface-2: #181b26;
+  --color-border: #232733;
+  --color-border-strong: #313747;
+  --color-ink: #e8eaf0;
+  --color-ink-muted: #9aa1b4;
+  --color-ink-faint: #5e6577;
+  --color-brand: #6d8bff;
+  --color-brand-strong: #4f6fff;
+  --color-positive: #34d399;
+  --color-negative: #f87171;
+  --color-warning: #fbbf24;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", monospace;
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Subtle tabular alignment for the dense screener numbers. */
+.tabular {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}

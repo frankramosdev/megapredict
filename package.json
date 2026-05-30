@@ -1,0 +1,29 @@
+{
+  "name": "megapredict",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "validate:pmxt": "node scripts/validate-pmxt.mjs"
+  },
+  "dependencies": {
+    "next": "16.2.6",
+    "pmxtjs": "2.46.14",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "server-only": "0.0.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.13",
+    "@types/node": "^24",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.9"
+  }
+}
