@@ -119,9 +119,9 @@ export default function Image() {
           {/* Powered by PMXT */}
           <div
             style={{
-              fontSize: 22,
-              fontWeight: 400,
-              color: '#4f6fff',
+              fontSize: 32,
+              fontWeight: 600,
+              color: '#0c0d1e',
               letterSpacing: '0.3px',
             }}
           >
