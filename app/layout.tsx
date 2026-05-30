@@ -9,6 +9,17 @@ export const metadata: Metadata = {
   },
   description:
     "Search, compare, and screen every major prediction market in one place. Cross-venue odds, liquidity, and price gaps across Polymarket, Kalshi, Limitless, and more.",
+  openGraph: {
+    title: "Mega Predict",
+    description: "One search for every Prediction Market — powered by PMXT",
+    siteName: "megapredict",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mega Predict",
+    description: "One search for every Prediction Market — powered by PMXT",
+  },
 };
 
 function Header() {
