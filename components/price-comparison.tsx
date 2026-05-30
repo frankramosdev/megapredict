@@ -200,7 +200,7 @@ export async function PriceComparison({ marketId }: { marketId: string }) {
           ) : (
             <span />
           )}
-          <Freshness fetchedAt={fetchedAt} label="Prices" staleAfter={15_000} />
+          <Freshness fetchedAt={fetchedAt} label="Prices" staleAfter={30_000} />
         </div>
       </div>
     );

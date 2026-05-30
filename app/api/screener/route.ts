@@ -33,7 +33,7 @@ export async function GET(request: NextRequest) {
       query: params.get("q")?.trim() || undefined,
       limit: Number(params.get("limit")) || 50,
     });
-    return ok({ clusters: data }, fetchedAt);
+    return ok({ clusters: data }, fetchedAt, "screener");
   } catch (err) {
     return fail(err);
   }

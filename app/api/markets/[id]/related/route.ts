@@ -8,7 +8,7 @@ export async function GET(
   const { id } = await params;
   try {
     const { data, fetchedAt } = await fetchRelated(decodeURIComponent(id));
-    return ok({ related: data }, fetchedAt);
+    return ok({ related: data }, fetchedAt, "related");
   } catch (err) {
     return fail(err);
   }

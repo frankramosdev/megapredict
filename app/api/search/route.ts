@@ -11,10 +11,10 @@ export async function GET(request: NextRequest) {
   try {
     if (type === "event") {
       const { data, fetchedAt } = await searchEvents(query, limit ?? 18);
-      return ok({ type, results: data }, fetchedAt);
+      return ok({ type, results: data }, fetchedAt, "search");
     }
     const { data, fetchedAt } = await searchMarkets(query, limit ?? 24);
-    return ok({ type, results: data }, fetchedAt);
+    return ok({ type, results: data }, fetchedAt, "search");
   } catch (err) {
     return fail(err);
   }

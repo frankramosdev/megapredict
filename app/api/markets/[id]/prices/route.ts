@@ -8,7 +8,7 @@ export async function GET(
   const { id } = await params;
   try {
     const { data, fetchedAt } = await fetchMarketPrices(decodeURIComponent(id));
-    return ok({ prices: data }, fetchedAt);
+    return ok({ prices: data }, fetchedAt, "prices");
   } catch (err) {
     return fail(err);
   }

@@ -35,7 +35,7 @@ export async function SearchResults({ q }: { q: string }) {
               "Trending markets across all venues"
             )}
           </h2>
-          <Freshness fetchedAt={fetchedAt} staleAfter={60_000} />
+          <Freshness fetchedAt={fetchedAt} staleAfter={300_000} />
         </div>
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {markets.map((m) => (

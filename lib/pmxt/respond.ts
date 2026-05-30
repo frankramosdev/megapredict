@@ -1,10 +1,22 @@
 import "server-only";
 import { NextResponse } from "next/server";
 import { PmxtConfigError } from "./client";
+import { PMXT_API_SMAXAGE } from "./cache-profiles";
+
+function cacheControl(sMaxAge: number): string {
+  return `public, s-maxage=${sMaxAge}, stale-while-revalidate=${sMaxAge * 2}`;
+}
 
 /** Uniform JSON envelope for route handlers, mirroring PMXT's success shape. */
-export function ok<T>(data: T, fetchedAt: number) {
-  return NextResponse.json({ success: true, data, fetchedAt });
+export function ok<T>(
+  data: T,
+  fetchedAt: number,
+  cache: keyof typeof PMXT_API_SMAXAGE = "search",
+) {
+  return NextResponse.json(
+    { success: true, data, fetchedAt },
+    { headers: { "Cache-Control": cacheControl(PMXT_API_SMAXAGE[cache]) } },
+  );
 }
 
 /**
