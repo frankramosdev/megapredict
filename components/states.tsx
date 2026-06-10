@@ -48,13 +48,34 @@ export function SetupHint() {
   );
 }
 
+const TLS_ERROR = /ssl|tls|EPROTO|packet length|alert protocol|certificate|handshake|fetch failed/i;
+
 export function ErrorState({ message }: { message?: string }) {
+  const isTls = message && TLS_ERROR.test(message);
   return (
     <MessageState title="Couldn't reach PMXT" tone="error">
-      <p>
-        The Router request failed{message ? `: ${message}` : "."}. This is usually a
-        transient network or rate-limit issue — try again in a moment.
-      </p>
+      {isTls ? (
+        <p>
+          The connection to <code className="rounded bg-surface-2 px-1 py-0.5">api.pmxt.dev</code>{" "}
+          failed with a TLS error. This is a <strong>network-level issue</strong> — the API itself
+          is up, but cannot be reached from this machine over HTTPS. Try opening{" "}
+          <a
+            href="https://api.pmxt.dev/health"
+            target="_blank"
+            rel="noreferrer"
+            className="text-brand underline underline-offset-2"
+          >
+            api.pmxt.dev/health
+          </a>{" "}
+          in your browser. If it loads, check for a VPN, firewall, or proxy intercepting TLS on
+          port 443. Details: <code className="rounded bg-surface-2 px-1 py-0.5">{message}</code>
+        </p>
+      ) : (
+        <p>
+          The Router request failed{message ? `: ${message}` : "."}. This is usually a
+          transient network or rate-limit issue — try again in a moment.
+        </p>
+      )}
     </MessageState>
   );
 }
