@@ -1,14 +1,18 @@
 import { Suspense } from "react";
 import Link from "next/link";
-import { SearchBox } from "@/components/search-box";
+// Old URL-driven search bar — replaced by the PMXT MarketSearch widget below.
+// Kept (commented out) for reference; see components/search-box.tsx.
+// import { SearchBox } from "@/components/search-box";
+import { MarketSearchWidget } from "@/components/market-search-widget";
 import { SearchResults } from "@/components/search-results";
 import { MarketCardSkeleton } from "@/components/market-card";
 
-function SearchBoxFallback() {
-  return (
-    <div className="h-[52px] w-full rounded-xl border border-border bg-surface" />
-  );
-}
+// Fallback for the old <SearchBox> Suspense boundary — no longer used.
+// function SearchBoxFallback() {
+//   return (
+//     <div className="h-[52px] w-full rounded-xl border border-border bg-surface" />
+//   );
+// }
 
 function ResultsSkeleton() {
   return (
@@ -49,9 +53,12 @@ export default function HomePage({
           across venues, compare odds, and spot price gaps.
         </p>
         <div className="mx-auto mt-6 max-w-2xl">
+          {/* Old URL-driven search input — commented out, not deleted.
           <Suspense fallback={<SearchBoxFallback />}>
             <SearchBox autoFocus />
           </Suspense>
+          */}
+          <MarketSearchWidget />
         </div>
         <div className="mt-3 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-xs text-ink-faint">
           <span>Try:</span>

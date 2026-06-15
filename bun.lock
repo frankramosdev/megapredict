@@ -6,6 +6,7 @@
       "name": "megapredict",
       "dependencies": {
         "next": "16.2.6",
+        "pmxt-widgets": "^0.5.9",
         "pmxtjs": "2.46.14",
         "react": "19.2.6",
         "react-dom": "19.2.6",
@@ -519,6 +520,8 @@
     "picocolors": ["picocolors@1.1.1", "", {}, "sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA=="],
 
     "pmxt-core": ["pmxt-core@2.46.14", "", { "dependencies": { "@limitless-exchange/sdk": "^1.0.5", "@opinion-labs/opinion-clob-sdk": "^0.6.0", "@polymarket/clob-client-v2": "^1.0.5", "@prob/clob": "0.5.0", "@solana/web3.js": "^1.98.4", "axios": "^1.13.2", "bs58": "^6.0.0", "cors": "^2.8.5", "dotenv": "^17.2.3", "ethers": "^5.8.0", "express": "^5.2.1", "isows": "^1.0.6", "msgpackr": "^2.0.1", "polymarket-us": "0.1.1", "viem": "^2.0.0", "ws": "^8.18.0" }, "peerDependencies": { "@nevuamarkets/poly-websockets": "^1.0.0" }, "optionalPeers": ["@nevuamarkets/poly-websockets"], "bin": { "pmxt-ensure-server": "bin/pmxt-ensure-server", "pmxt-server": "dist/server/index.js" } }, "sha512-o50UExdcFLZOkq8Ugu94Akb6fxTmVU88y/fCgmy+VSxwMCWyjvYOT5wE44lQnHuYaTc83LqHJor5adm+DlwXxw=="],
+
+    "pmxt-widgets": ["pmxt-widgets@0.5.9", "", { "peerDependencies": { "react": ">=18", "react-dom": ">=18" } }, "sha512-tEfgAgDMWMFEv/4RGodZ6epSyXzVjlQYFAurKUSA9DC9Vm/5AF9JsmuWodGq1jwK2tGgQdERa1sT1fIFpkaqgg=="],
 
     "pmxtjs": ["pmxtjs@2.46.14", "", { "dependencies": { "pmxt-core": "2.46.14", "ws": "^8.18.0" } }, "sha512-jZwSCDN7Tsgs/GbojItuUWDu0aSr17pD7TwldYQXwaeP+vdKHnb0YcaRdLV8A3ZXv1Sqn8MZbcmPnseJmVJ2RA=="],
 

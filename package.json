@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "next": "16.2.6",
+    "pmxt-widgets": "^0.5.9",
     "pmxtjs": "2.46.14",
     "react": "19.2.6",
     "react-dom": "19.2.6",

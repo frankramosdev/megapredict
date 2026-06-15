@@ -1,5 +1,32 @@
 @import "tailwindcss";
 
+/*
+ * Tailwind v4 doesn't scan node_modules by default, so the utility classes
+ * baked into the PMXT widgets (icon sizing, layout, colors) never got
+ * generated — which is why the MarketSearch icon rendered full-size. Point
+ * Tailwind at the shipped widget code so those classes exist in the bundle.
+ */
+@source "../node_modules/pmxt-widgets/dist";
+
+/*
+ * megapredict is a dark-only app and uses no `dark:` variants of its own. The
+ * PMXT widgets are built light-first with `dark:` overrides driven by
+ * prefers-color-scheme. Redefine the `dark` variant so it's always on, forcing
+ * the widgets into their dark styling regardless of the visitor's OS setting.
+ */
+@custom-variant dark (&);
+
+/* Theme the PMXT widgets to the megapredict palette (see --color-* below). */
+:root {
+  --pmxt-surface: #12141c;
+  --pmxt-surface-dark: #12141c;
+  --pmxt-accent: #4f6fff;
+  --pmxt-accent-hover: #6d8bff;
+  --pmxt-accent-tint: rgba(79, 111, 255, 0.14);
+  --pmxt-positive: #34d399;
+  --pmxt-negative: #f87171;
+}
+
 @theme {
   --color-canvas: #0a0b0f;
   --color-surface: #12141c;
