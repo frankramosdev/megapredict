@@ -1,8 +1,11 @@
 import { searchMarkets } from "@/lib/pmxt/queries";
 import { isPmxtConfigured, PmxtConfigError } from "@/lib/pmxt/client";
-import { MarketCard } from "./market-card";
+// MarketCard is no longer rendered here — the MatchedMarkets widget replaces the
+// hand-rolled grid. Kept (commented out) alongside the old grid for reference.
+// import { MarketCard } from "./market-card";
 import { Freshness } from "./freshness";
 import { ErrorState, NoResults, SetupHint } from "./states";
+import { MatchedMarketsWidget } from "./matched-markets-widget";
 
 /**
  * Async Server Component. Calls the cached `searchMarkets` query server-side
@@ -37,11 +40,16 @@ export async function SearchResults({ q }: { q: string }) {
           </h2>
           <Freshness fetchedAt={fetchedAt} staleAfter={300_000} />
         </div>
+        {/* Old hand-rolled MarketCard grid — replaced by the PMXT MatchedMarkets
+            widget below (PMXT's signature cross-venue, spread-highlighted view).
+            Kept (commented out) for reference.
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {markets.map((m) => (
             <MarketCard key={m.marketId} market={m} />
           ))}
         </div>
+        */}
+        <MatchedMarketsWidget limit={12} />
       </section>
     );
   } catch (err) {
